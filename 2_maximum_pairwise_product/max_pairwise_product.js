@@ -19,18 +19,32 @@ function readLine (line) {
 }
 
 const max = (arr) => {
-    let endIndex = arr.length - 1
-    let pairSums = []
+    const pairSums = []
     const pairs = []
+    
+    let endIndex = arr.length - 1
     let maxValue = 0
-    for (i=0; i <= endIndex-1; i++) {
-        for (j =i+1; j <= endIndex; j++) {
+    
+    for (i = 0; i <= endIndex-1; i++) {
+        for (j = i+1; j <= endIndex; j++) {
             pairs.push([i, j])
-            pairSums.push(arr[i]* arr[j])
-            maxValue = Math.max(maxValue, arr[i]*arr[j])
+            pairSums.push(arr[i] * arr[j])
+            maxValue = Math.max(maxValue, arr[i] * arr[j])
         }
     }
+    
     return maxValue
+}
+
+
+const maxWithSort = (arr) => {
+    const sortedArr = arr.sort()
+    
+    if(arr.length < 2){
+        return 0
+    }else {
+        return sortedArr[sortedArr.length - 1] * sortedArr[sortedArr.length - 2]
+    }
 }
 
 
