@@ -13,39 +13,25 @@ rl.once('line', () => {
 
 function readLine (line) {
     const arr = line.toString().split(' ').map(Number);
-
+    console.log(arr);
     console.log(max(arr));
     process.exit();
 }
 
-function max(arr) {
-    let n = arr.length-1
+const max = (arr) => {
+    let endIndex = arr.length - 1
     let pairSums = []
-    let maxValue = 0;
-        for (i=0; i< arr.length-2; i++)
-            for (j=1; j< arr.length -1; j++)
-                totalPairs.push([arr[i],arr[j]])
-                pairSums.push([arr[i]*arr[j]])
-                maxValue = Math.max(maxValue, aar[i]*arr[j])
-
+    const pairs = []
+    let maxValue = 0
+    for (i=0; i <= endIndex-1; i++) {
+        for (j =i+1; j <= endIndex; j++) {
+            pairs.push([i, j])
+            pairSums.push(arr[i]* arr[j])
+            maxValue = Math.max(maxValue, arr[i]*arr[j])
+        }
+    }
+    return maxValue
 }
 
-const value = maxPairSum([5,4,3,1])
-
-
-
-const superSimpleTests = (exampleArray, expectedValue)=>{
-
-    if(sumArrayPairs(exampleArray)===expectedValue){
-    console.log('This example passes!')
-    }
-    console.log('This example failse!')
-    }
-    
-    superSimpleTests([5,4,3,1], 20)
-    superSimpleTests([], 0)
-    superSimpleTests([5], 0)
-    superSimpleTests([], 0)
-    superSimpleTests([5,5], 25)
 
 module.exports = max;
