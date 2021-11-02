@@ -4,9 +4,9 @@ const superSimplTestAPlusB = (
     a , b, expectedValue) => {
     const sum1 = sum(a,b)
     if( sum1 === expectedValue){
-        console.log(`Success: Ran with [${a,b}]: and recieved ${expectedValue}`)
+        console.log(`Success: Ran with [${a}, ${b}]: and ${expectedValue}`)
     } else {
-    	console.log(`Failure: Ran with [${a,b}]: recieved ${sum1} but expected ${expectedValue}`)
+    	console.log(`Failure: Ran with ${[a,b]}: and ${sum1} but expected ${expectedValue}`)
     }
 }
 
