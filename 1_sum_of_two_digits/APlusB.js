@@ -16,3 +16,8 @@ function readLine (line) {
     process.exit();
   }
 }
+const sum =(a,b) =>{
+  return a+b
+}
+
+module.exports = sum;
